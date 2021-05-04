@@ -42,7 +42,7 @@ class FastFruit(Sprite):
             self.y += FRUIT_FAST_SPEED
 
         elif self.app.score%10 == 0:
-            self.y += (FRUIT_FAST_SPEED) + (1)
+            self.y += (FRUIT_FAST_SPEED) + (2)
 
         if self.y > CANVAS_WIDTH + 30:
             self.to_be_deleted = True
@@ -63,7 +63,7 @@ class SlideFruit(Sprite):
             self.y += FRUIT_FAST_SPEED
 
         elif self.app.score%10 == 0:
-            self.y += (FRUIT_FAST_SPEED) + 1
+            self.y += (FRUIT_FAST_SPEED) + 2
 
         self.x += self.direction * 5
 
@@ -86,7 +86,7 @@ class CurvyFruit(Sprite):
             self.y += FRUIT_SLOW_SPEED * 1.2
 
         elif self.app.score%10 == 0:
-            self.y += (FRUIT_SLOW_SPEED * 1.2) + 1
+            self.y += (FRUIT_SLOW_SPEED * 1.2) + 2
 
 
 
