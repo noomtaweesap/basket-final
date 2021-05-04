@@ -14,7 +14,15 @@ class SlowFruit(Sprite):
         self.app = app
 
     def update(self):
-        self.y += FRUIT_SLOW_SPEED
+        if self.app.score == 0:
+            self.y += FRUIT_SLOW_SPEED
+
+        elif self.app.score % 10 != 0:
+            self.y += FRUIT_SLOW_SPEED
+
+        elif self.app.score%10 == 0:
+            self.y += (FRUIT_SLOW_SPEED) + (2)
+
 
         if self.y > CANVAS_WIDTH + 30:
             self.to_be_deleted = True
@@ -27,7 +35,14 @@ class FastFruit(Sprite):
         self.app = app
 
     def update(self):
-        self.y += FRUIT_FAST_SPEED
+        if self.app.score == 0:
+            self.y += FRUIT_FAST_SPEED
+
+        elif self.app.score%10 != 0:
+            self.y += FRUIT_FAST_SPEED
+
+        elif self.app.score%10 == 0:
+            self.y += (FRUIT_FAST_SPEED) + (1)
 
         if self.y > CANVAS_WIDTH + 30:
             self.to_be_deleted = True
@@ -41,7 +56,15 @@ class SlideFruit(Sprite):
         self.direction = randint(0,1)*2 - 1
 
     def update(self):
-        self.y += FRUIT_FAST_SPEED
+        if self.app.score == 0:
+            self.y += FRUIT_FAST_SPEED
+
+        elif self.app.score % 10 != 0:
+            self.y += FRUIT_FAST_SPEED
+
+        elif self.app.score%10 == 0:
+            self.y += (FRUIT_FAST_SPEED) + 1
+
         self.x += self.direction * 5
 
         if self.y > CANVAS_WIDTH + 30:
@@ -56,7 +79,17 @@ class CurvyFruit(Sprite):
         self.t = randint(0,360) * 2 * math.pi / 360
 
     def update(self):
-        self.y += FRUIT_SLOW_SPEED * 1.2
+        if self.app.score == 0:
+            self.y += FRUIT_SLOW_SPEED
+
+        elif self.app.score % 10 != 0:
+            self.y += FRUIT_SLOW_SPEED * 1.2
+
+        elif self.app.score%10 == 0:
+            self.y += (FRUIT_SLOW_SPEED * 1.2) + 1
+
+
+
         self.t += 1
         self.x += math.sin(self.t*0.08)*10
 
